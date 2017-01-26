@@ -1,4 +1,4 @@
 ﻿  lab2.cpp
-c:\users\svc-student\desktop\cs250-data-structures\lab 2\stepping\stepping\lab2.cpp(34): warning C4018: '<': signed/unsigned mismatch
+c:\users\svc-student\desktop\cs250-data-structures\lab 2\stepping\stepping\lab2.cpp(34): warning C4018: '<=': signed/unsigned mismatch
   Stepping.vcxproj -> C:\Users\svc-student\Desktop\CS250-Data-Structures\Lab 2\Stepping\Debug\Stepping.exe
   Stepping.vcxproj -> C:\Users\svc-student\Desktop\CS250-Data-Structures\Lab 2\Stepping\Debug\Stepping.pdb (Partial PDB)
