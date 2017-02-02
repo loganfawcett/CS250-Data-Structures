@@ -1,0 +1,4 @@
+﻿  SmartStaticArray.cpp
+c:\users\svc-student\desktop\cs250-data-structures\hwex static array\hwex static array\smartstaticarray.cpp(131): warning C4172: returning address of local variable or temporary: blorp
+  HWEx Static Array.vcxproj -> C:\Users\svc-student\Desktop\CS250-Data-Structures\HWEx Static Array\Debug\HWEx Static Array.exe
+  HWEx Static Array.vcxproj -> C:\Users\svc-student\Desktop\CS250-Data-Structures\HWEx Static Array\Debug\HWEx Static Array.pdb (Partial PDB)
