@@ -50,7 +50,7 @@ bool SmartStaticArray::Extend( const SmartStaticArray& other )
 		return false;
 	}
 
-	for (int i = 0; i < this->Size(); i++)
+	for (int i = 0; i < other.Size(); i++)
 	{
 		this->Push(other.Get(i));
 	}
