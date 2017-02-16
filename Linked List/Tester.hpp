@@ -200,10 +200,10 @@ int TestExtend()
 	string solution = "";
 	string actual = "";
 
-	for ( int i = 0; i < arr2.Size(); i++ )
+	for ( int i = 0; i < arr1.Size(); i++ )
 	{
         if ( i != 0 ) { actual += ", "; solution += ", "; }
-        actual += arr2.Get( i );
+        actual += arr1.Get( i );
         solution += solutionArray.Get( i );
 	}
 
