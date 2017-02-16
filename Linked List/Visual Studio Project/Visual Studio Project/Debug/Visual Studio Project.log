@@ -1,0 +1,11 @@
+﻿  main.cpp
+  TesterBase.cpp
+  System.cpp
+  Strings.cpp
+c:\users\svc-student\desktop\linked list\cpp-utilities-master\strings.cpp(58): warning C4018: '<': signed/unsigned mismatch
+  Menu.cpp
+  BookProgram.cpp
+  Generating Code...
+  LINK : C:\Users\svc-student\Desktop\Linked List\Visual Studio Project\Debug\Visual Studio Project.exe not found or not built by the last incremental link; performing full link
+  Visual Studio Project.vcxproj -> C:\Users\svc-student\Desktop\Linked List\Visual Studio Project\Debug\Visual Studio Project.exe
+  Visual Studio Project.vcxproj -> C:\Users\svc-student\Desktop\Linked List\Visual Studio Project\Debug\Visual Studio Project.pdb (Partial PDB)
