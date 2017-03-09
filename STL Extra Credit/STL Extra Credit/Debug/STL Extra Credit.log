@@ -1,0 +1,6 @@
+﻿  Main.cpp
+c:\users\svc-student\desktop\cs250-data-structures\stl extra credit\stl extra credit\main.cpp(36): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\svc-student\desktop\cs250-data-structures\stl extra credit\stl extra credit\main.cpp(44): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\svc-student\desktop\cs250-data-structures\stl extra credit\stl extra credit\main.cpp(52): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  STL Extra Credit.vcxproj -> C:\Users\svc-student\Desktop\CS250-Data-Structures\STL Extra Credit\Debug\STL Extra Credit.exe
+  STL Extra Credit.vcxproj -> C:\Users\svc-student\Desktop\CS250-Data-Structures\STL Extra Credit\Debug\STL Extra Credit.pdb (Partial PDB)
