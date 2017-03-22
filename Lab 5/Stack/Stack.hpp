@@ -18,14 +18,17 @@ class Stack : public DoublyLinkedList<T>
 
     virtual void Push( T data )
     {
+		PushBack(data);
     }
 
     virtual void Pop()
     {
+		PopBack();
     }
 
     virtual T Take()
     {
+		return GetBack();
     }
 };
 

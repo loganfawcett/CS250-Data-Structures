@@ -18,14 +18,17 @@ class Queue : public DoublyLinkedList<T>
 
     virtual void Push( T data )
     {
+		PushBack(data);
     }
 
     virtual void Pop()
     {
+		PopFront();
     }
 
     virtual T Take()
     {
+		return GetFront();
     }
 };
 
