@@ -4,6 +4,7 @@
 #include "Application.hpp"
 #include "Drawer.hpp"
 #include "GameBoard.hpp"
+#include "LoganStack.h"
 
 #include <stack>
 using namespace std;
@@ -30,7 +31,8 @@ private:
 	GameBoard m_board;
 	int m_turn;
 
-	stack<GameBoard> m_gameHistory;
+	//stack<GameBoard> m_gameHistory;
+	LoganStack<GameBoard> m_gameHistory;
 };
 
 #endif

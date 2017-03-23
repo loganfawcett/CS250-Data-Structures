@@ -126,6 +126,7 @@
     <ClInclude Include="Application.hpp" />
     <ClInclude Include="Drawer.hpp" />
     <ClInclude Include="GameBoard.hpp" />
+    <ClInclude Include="LoganStack.h" />
     <ClInclude Include="TicTacToe.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

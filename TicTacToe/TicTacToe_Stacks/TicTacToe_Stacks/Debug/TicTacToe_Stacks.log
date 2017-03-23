@@ -1,2 +1,19 @@
-﻿  TicTacToe_Stacks.vcxproj -> C:\Users\rmorri38\Desktop\StarterFiles\TicTacToe_Stacks\Debug\TicTacToe_Stacks.exe
-  TicTacToe_Stacks.vcxproj -> C:\Users\rmorri38\Desktop\StarterFiles\TicTacToe_Stacks\Debug\TicTacToe_Stacks.pdb (Partial PDB)
+﻿  TicTacToe.cpp
+c:\users\svc-student\desktop\cs250-data-structures\tictactoe\tictactoe_stacks\tictactoe_stacks\loganstack.h(69): warning C4101: 'ex': unreferenced local variable
+  c:\users\svc-student\desktop\cs250-data-structures\tictactoe\tictactoe_stacks\tictactoe_stacks\loganstack.h(44): note: while compiling class template member function 'void LoganStack<GameBoard>::push(T)'
+          with
+          [
+              T=GameBoard
+          ]
+  c:\users\svc-student\desktop\cs250-data-structures\tictactoe\tictactoe_stacks\tictactoe_stacks\tictactoe.cpp(17): note: see reference to function template instantiation 'void LoganStack<GameBoard>::push(T)' being compiled
+          with
+          [
+              T=GameBoard
+          ]
+  c:\users\svc-student\desktop\cs250-data-structures\tictactoe\tictactoe_stacks\tictactoe_stacks\tictactoe.hpp(35): note: see reference to class template instantiation 'LoganStack<GameBoard>' being compiled
+  Application.cpp
+  main.cpp
+  Drawer.cpp
+  Generating Code...
+  TicTacToe_Stacks.vcxproj -> C:\Users\svc-student\Desktop\CS250-Data-Structures\TicTacToe\TicTacToe_Stacks\Debug\TicTacToe_Stacks.exe
+  TicTacToe_Stacks.vcxproj -> C:\Users\svc-student\Desktop\CS250-Data-Structures\TicTacToe\TicTacToe_Stacks\Debug\TicTacToe_Stacks.pdb (Partial PDB)

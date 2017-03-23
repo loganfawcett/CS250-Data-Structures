@@ -1,6 +1,9 @@
 #include "TicTacToe.hpp"
 
+#include <stdexcept>
+#include <exception>
 #include <iostream>
+#include <string>
 using namespace std;
 
 TicTacToe::TicTacToe(Application* ptrApp, int width, int height)
@@ -108,14 +111,14 @@ void TicTacToe::Draw()
 			if (m_board.grid[x][y] == 'x')
 			{
 				m_drawer.DrawLine(tileX, tileY, tileX + 100, tileY + 100, 255, 0, 0);
-				m_drawer.DrawLine(tileX, tileY +100, tileX + 100, tileY, 255, 0, 0);
+				m_drawer.DrawLine(tileX, tileY + 100, tileX + 100, tileY, 255, 0, 0);
 			}
 			else if (m_board.grid[x][y] == 'o')
 			{
 				m_drawer.DrawLine(tileX + 50, tileY, tileX + 0, tileY + 50, 0, 0, 255);
-				m_drawer.DrawLine(tileX  + 50, tileY, tileX + 100, tileY + 50, 0, 0, 255);
-				m_drawer.DrawLine(tileX + 50, tileY +100, tileX + 0, tileY + 50, 0, 0, 255);
-				m_drawer.DrawLine(tileX + 50, tileY +100, tileX + 100, tileY + 50, 0, 0, 255);
+				m_drawer.DrawLine(tileX + 50, tileY, tileX + 100, tileY + 50, 0, 0, 255);
+				m_drawer.DrawLine(tileX + 50, tileY + 100, tileX + 0, tileY + 50, 0, 0, 255);
+				m_drawer.DrawLine(tileX + 50, tileY + 100, tileX + 100, tileY + 50, 0, 0, 255);
 			}
 		}
 	}
@@ -123,21 +126,47 @@ void TicTacToe::Draw()
 
 void TicTacToe::PushHistory()
 {
-	m_gameHistory.push(m_board);
-	cout << m_gameHistory.size() << " moves" << endl;
+	//	Error Checking
+	try
+	{
+		m_gameHistory.push(m_board);
+		cout << m_gameHistory.size() << " moves" << endl;
+	}
+	//	Not enough memory
+	catch (const string& ex)
+	{
+		cout << "Error, bad_alloc: " << ex << endl;
+	}
+	//	Out of range
+	catch (const out_of_range& ex)
+	{
+		cout << "Error, out_of_range: " << ex.what() << endl;
+	}
 	m_board.Display();
 }
 
 void TicTacToe::UndoLastMove()
 {
-	cout << "Undo last move, stack size: " << m_gameHistory.size() << endl; 
-	if (m_gameHistory.size() >= 1)
+	cout << "Undo last move, stack size: " << m_gameHistory.size() << endl;
+	if (m_gameHistory.size() > 1)
 	{
 		// The top-most item is the current state,
 		// so actually need to pop this and then get top.
-		m_gameHistory.pop();
-		m_board = m_gameHistory.top();
-		m_turn--;
+
+		//	Error checking
+		try
+		{
+			m_gameHistory.pop();
+			m_board = m_gameHistory.top();
+			m_turn--;
+		}
+		//	Out of range
+		catch (const out_of_range& ex)
+		{
+			cout << "Error, out_ofrange: " << ex.what() << endl;
+		}
+
+
 	}
 	m_board.Display();
 }

@@ -1,3 +1,6 @@
-﻿  Main.cpp
+﻿  Source.cpp
+  Main.cpp
 c:\users\svc-student\desktop\cs250-data-structures\try catch example\try catch example\main.cpp(18): warning C4290: C++ exception specification ignored except to indicate a function is not __declspec(nothrow)
-c:\users\svc-student\desktop\cs250-data-structures\try catch example\try catch example\main.cpp(41): error C3867: 'std::exception::what': non-standard syntax; use '&' to create a pointer to member
+  Generating Code...
+Source.obj : error LNK2005: _main already defined in Main.obj
+C:\Users\svc-student\Desktop\CS250-Data-Structures\Try catch example\Debug\Try catch example.exe : fatal error LNK1169: one or more multiply defined symbols found

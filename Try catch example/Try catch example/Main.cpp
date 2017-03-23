@@ -38,7 +38,7 @@ int main()
 	}
 	catch (const out_of_range& ex)
 	{
-		cout << "Error, out_of_range: " << ex.what << endl;
+		cout << "Error, out_of_range: " << ex.what() << endl;
 	}
 
 	float a = 5, b = 0;
