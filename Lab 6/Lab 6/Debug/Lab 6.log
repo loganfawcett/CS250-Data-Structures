@@ -1,4 +1,9 @@
 ﻿  Main.cpp
-c:\users\svc-student\desktop\cs250-data-structures\lab 6\lab 6\tester.h(30): warning C4101: 'ex': unreferenced local variable
-c:\users\svc-student\desktop\cs250-data-structures\lab 6\lab 6\tester.h(47): warning C4101: 'ex': unreferenced local variable
-LINK : fatal error LNK1104: cannot open file 'C:\Users\svc-student\Desktop\CS250-Data-Structures\Lab 6\Debug\Lab 6.exe'
+c:\users\svc-student\desktop\cs250-data-structures\lab 6\lab 6\tester.h(31): warning C4101: 'ex': unreferenced local variable
+c:\users\svc-student\desktop\cs250-data-structures\lab 6\lab 6\tester.h(48): warning C4101: 'ex': unreferenced local variable
+c:\users\svc-student\desktop\cs250-data-structures\lab 6\lab 6\sortedlist.h(114): warning C4101: 'ex': unreferenced local variable
+  c:\users\svc-student\desktop\cs250-data-structures\lab 6\lab 6\sortedlist.h(106): note: while compiling class template member function 'void SortedList<int>::Display(void)'
+  c:\users\svc-student\desktop\cs250-data-structures\lab 6\lab 6\sortedlist.h(79): note: see reference to function template instantiation 'void SortedList<int>::Display(void)' being compiled
+  c:\users\svc-student\desktop\cs250-data-structures\lab 6\lab 6\tester.h(25): note: see reference to class template instantiation 'SortedList<int>' being compiled
+  Lab 6.vcxproj -> C:\Users\svc-student\Desktop\CS250-Data-Structures\Lab 6\Debug\Lab 6.exe
+  Lab 6.vcxproj -> C:\Users\svc-student\Desktop\CS250-Data-Structures\Lab 6\Debug\Lab 6.pdb (Partial PDB)

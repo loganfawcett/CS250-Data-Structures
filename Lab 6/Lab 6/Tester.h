@@ -16,6 +16,7 @@ public:
 private:
 	bool TestGetAt()
 	{
+		cout << "Testing GetAt\n";
 		int correct = 0;
 		int possible = 0;
 
@@ -57,19 +58,28 @@ private:
 			correct++;
 		}
 
+		possible++;
+		if (s1.GetAt(2) == 6)
+		{
+			correct++;
+		}
+
 
 		if (correct == possible)
 		{
+			cout << "All tests passed\n";
 			return true;
 		}
 		else
 		{
+			cout << "Not all tests passed\n";
 			return false;
 		}
 	}
 
 	bool TestPush()
 	{
+		cout << "Testing Push\n";
 		int correct = 0;
 		int possible = 0;
 
@@ -98,7 +108,7 @@ private:
 
 		possible++;
 		s1.SortedPush(1);
-		if (s1.GetAt(1) == 1)
+		if (s1.GetAt(0) == 1)
 		{
 			correct++;
 		}
@@ -106,10 +116,12 @@ private:
 
 		if (correct == possible)
 		{
+			cout << "All tests passed\n";
 			return true;
 		}
 		else
 		{
+			cout << "Not all tests passed\n";
 			return false;
 		}
 	}
@@ -138,7 +150,7 @@ private:
 		s3.SortedPush(3);
 		s3.SortedPush(4);
 		s3.SortedPush(5);
-		if (s2.Size() != 3)
+		if (s3.Size() != 3)
 		{
 			cout << "Test failed: Size is not 3." << endl;
 			return false;
