@@ -1,6 +1,4 @@
 ﻿  StudentCode.cpp
-  main.cpp
-  TesterBase.cpp
-  Generating Code...
-  Visual Studio.vcxproj -> C:\Users\svc-student\Desktop\PART 1 QUEUE\Visual Studio\Debug\Visual Studio.exe
-  Visual Studio.vcxproj -> C:\Users\svc-student\Desktop\PART 1 QUEUE\Visual Studio\Debug\Visual Studio.pdb (Partial PDB)
+c:\users\svc-student\desktop\cs250-data-structures\test 2\part 1 queue\studentcode.cpp(37): warning C4715: 'Queue::Pop': not all control paths return a value
+  Visual Studio.vcxproj -> C:\Users\svc-student\Desktop\CS250-Data-Structures\Test 2\PART 1 QUEUE\Visual Studio\Debug\Visual Studio.exe
+  Visual Studio.vcxproj -> C:\Users\svc-student\Desktop\CS250-Data-Structures\Test 2\PART 1 QUEUE\Visual Studio\Debug\Visual Studio.pdb (Partial PDB)

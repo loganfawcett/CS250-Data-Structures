@@ -14,5 +14,24 @@ member variables of the Queue class in the
 */
 bool Queue::Pop()
 {
-	return false;
+	if (IsEmpty())
+	{
+		return false;
+	}
+	else if(m_ptrFirst == m_ptrLast)
+	{
+		delete m_ptrLast;
+		m_ptrFirst = nullptr;
+		m_ptrLast = nullptr;
+		m_itemCount--;
+		return true;
+	}
+	else
+	{
+		Node* ptrSecond = m_ptrFirst->ptrNext;
+		ptrSecond->ptrPrev = nullptr;
+		delete m_ptrFirst;
+		m_ptrFirst = ptrSecond;
+		m_itemCount--;
+	}
 }
