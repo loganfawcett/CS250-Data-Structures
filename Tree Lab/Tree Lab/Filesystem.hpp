@@ -49,12 +49,42 @@ private:
     // ** Implement these **
     File* Find( const string& filename, File* ptrLookAt )
     {
-        return nullptr;
+		if (ptrLookAt->name == filename) return ptrLookAt;
+		if (ptrLookAt->isDirectory)
+		{
+			for (int i = 0; i < ptrLookAt->childrenPtrs.size(); i++)
+			{
+				File* temp = Find(filename, ptrLookAt->childrenPtrs[i]);
+				if (temp != nullptr) return temp;
+			}
+		}
+		return nullptr;
     }
 
     File* GetFile( list<string> path, const string& filename, File* current )
     {
-        return nullptr;
+		path.pop_front();
+		if (path.size() != 0)
+		{
+			for (int i = 0; i < current->childrenPtrs.size(); i++)
+			{
+				if (current->childrenPtrs[i]->name == path.front())
+				{
+					return GetFile(path, filename, current->childrenPtrs[i]);
+				}
+			}
+		}
+		else
+		{
+			for (int i = 0; i < current->childrenPtrs.size(); i++)
+			{
+				if (current->childrenPtrs[i]->name == filename)
+				{
+					return current->childrenPtrs[i];
+				}
+			}
+			return nullptr;
+		}
     }
 
 public:

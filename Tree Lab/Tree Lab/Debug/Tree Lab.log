@@ -1,3 +1,7 @@
 ﻿  main.cpp
-  Tree Lab.vcxproj -> C:\Users\svc-student\Desktop\Tree Lab\Debug\Tree Lab.exe
-  Tree Lab.vcxproj -> C:\Users\svc-student\Desktop\Tree Lab\Debug\Tree Lab.pdb (Partial PDB)
+c:\users\svc-student\desktop\cs250-data-structures\tree lab\tree lab\filesystem.hpp(55): warning C4018: '<': signed/unsigned mismatch
+c:\users\svc-student\desktop\cs250-data-structures\tree lab\tree lab\filesystem.hpp(69): warning C4018: '<': signed/unsigned mismatch
+c:\users\svc-student\desktop\cs250-data-structures\tree lab\tree lab\filesystem.hpp(79): warning C4018: '<': signed/unsigned mismatch
+c:\users\svc-student\desktop\cs250-data-structures\tree lab\tree lab\filesystem.hpp(88): warning C4715: 'Filesystem::GetFile': not all control paths return a value
+  Tree Lab.vcxproj -> C:\Users\svc-student\Desktop\CS250-Data-Structures\Tree Lab\Debug\Tree Lab.exe
+  Tree Lab.vcxproj -> C:\Users\svc-student\Desktop\CS250-Data-Structures\Tree Lab\Debug\Tree Lab.pdb (Partial PDB)
