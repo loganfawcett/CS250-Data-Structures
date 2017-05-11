@@ -99,6 +99,62 @@ public:
 	*/
 	void Delete(const TK& key)
 	{
+		Node<TK, TD>* tempK = FindParentOfNode(key);
+
+		Node<TK, TD>* temp = FindNode(key);
+		if (temp->ptrLeft == NULL && temp->ptrRight == NULL)
+		{
+			if (tempK->ptrLeft != NULL)
+			{
+				if (tempK->ptrLeft->key == key)
+				{
+					tempK->ptrLeft = nullptr;
+				}
+			}
+			if (tempK->ptrRight != NULL)
+			{
+				if (tempK->ptrRight->key == key)
+				{
+					tempK->ptrRight = nullptr;
+				}
+			}
+
+			delete temp;
+			temp = nullptr;
+			m_nodeCount--;
+		}
+		else if (temp->ptrRight == NULL)
+		{
+			Node<TK, TD>* A = temp;
+			temp = temp->ptrLeft;
+			delete A;
+		}
+		else if (temp->ptrLeft == NULL)
+		{
+			Node<TK, TD>* A = temp;
+			temp = temp->ptrRight;
+			delete A;
+		}
+		else
+		{
+			Node<TK, TD>* A = temp;
+			while (A->ptrRight != NULL)
+			{
+				A = A->ptrRight;
+			}
+
+			Node<TK, TD>* tempData = new Node<TK, TD>;
+			tempData->data = A->data;
+			tempData->key = A->key;
+			tempData->ptrLeft = temp->ptrLeft;
+
+			temp->ptrLeft = A;
+			Delete(A->key);
+			temp->data = tempData->data;
+			temp->key = tempData->key;
+			temp->ptrLeft = tempData->ptrLeft;
+		}
+
 	}
 
 	//! Searches the tree for the key provided and returns true if found, false if not.
@@ -107,9 +163,24 @@ public:
 	*/
 	bool Contains(const TK& key)
 	{
-		if (m_ptrRoot->key == key)
+		Node<TK, TD>* ptr_temp = m_ptrRoot;
+		while (ptr_temp != nullptr)
 		{
-			return true;
+			if (ptr_temp->key == key)
+			{
+				return true;
+			}
+			else
+			{
+				if (key > ptr_temp->key)
+				{
+					ptr_temp = ptr_temp->ptrRight;
+				}
+				else
+				{
+					ptr_temp = ptr_temp->ptrLeft;
+				}
+			}
 		}
 		return false;
 	}
@@ -227,7 +298,26 @@ private:
 	*/
 	Node<TK, TD>* FindNode(const TK& key)
 	{
-		return nullptr; // temp
+		Node<TK, TD>* ptr_temp = m_ptrRoot;
+		while (ptr_temp != nullptr)
+		{
+			if (ptr_temp->key == key)
+			{
+				return ptr_temp;
+			}
+			else
+			{
+				if (key > ptr_temp->key)
+				{
+					ptr_temp = ptr_temp->ptrRight;
+				}
+				else
+				{
+					ptr_temp = ptr_temp->ptrLeft;
+				}
+			}
+		}
+		return nullptr;
 	}
 
 	//! Returns the PARENT Node* of the Node* that contains the key, or nullptr if data is not in the tree.
@@ -240,7 +330,37 @@ private:
 	*/
 	Node<TK, TD>* FindParentOfNode(const TK& key)
 	{
-		return nullptr; // temp
+		Node<TK, TD>* ptr_temp = m_ptrRoot;
+		while (true)
+		{
+			if (ptr_temp->ptrLeft == NULL && ptr_temp->ptrRight == NULL)
+			{
+				return nullptr;
+			}
+			if (ptr_temp->ptrLeft != NULL)
+			{
+				if (ptr_temp->ptrLeft->key == key)
+				{
+					return ptr_temp;
+				}
+			}
+			if (ptr_temp->ptrRight != NULL)
+			{
+				if (ptr_temp->ptrRight->key == key)
+				{
+					return ptr_temp;
+				}
+			}
+
+			if (key > ptr_temp->key)
+			{
+				ptr_temp = ptr_temp->ptrRight;
+			}
+			else
+			{
+				ptr_temp = ptr_temp->ptrLeft;
+			}
+		}
 	}
 
 	// RECURSIVE FUNCTIONS: These will recurse through
@@ -314,6 +434,17 @@ private:
 	*/
 	void GetInOrder(Node<TK, TD>* ptrCurrent, stringstream& stream)
 	{
+		if (ptrCurrent->ptrLeft != NULL)
+		{
+			GetInOrder(ptrCurrent->ptrLeft, stream);
+		}
+
+		stream << ptrCurrent->key << " ";
+
+		if (ptrCurrent->ptrRight != NULL)
+		{
+			GetInOrder(ptrCurrent->ptrRight, stream);
+		}
 	}
 
 	//! Recurses through the tree in PRE-ORDER order, writing to the stream.
@@ -329,6 +460,17 @@ private:
 	*/
 	void GetPreOrder(Node<TK, TD>* ptrCurrent, stringstream& stream)
 	{
+		stream << ptrCurrent->key << " ";
+		
+		if (ptrCurrent->ptrLeft != NULL)
+		{
+			GetPreOrder(ptrCurrent->ptrLeft, stream);
+		}
+
+		if (ptrCurrent->ptrRight != NULL)
+		{
+			GetPreOrder(ptrCurrent->ptrRight, stream);
+		}
 	}
 
 	//! Recurses through the tree in POST-ORDER order, writing to the stream.
@@ -344,6 +486,17 @@ private:
 	*/
 	void GetPostOrder(Node<TK, TD>* ptrCurrent, stringstream& stream)
 	{
+		if (ptrCurrent->ptrLeft != NULL)
+		{
+			GetPostOrder(ptrCurrent->ptrLeft, stream);
+		}
+
+		if (ptrCurrent->ptrRight != NULL)
+		{
+			GetPostOrder(ptrCurrent->ptrRight, stream);
+		}
+
+		stream << ptrCurrent->key << " ";
 	}
 
 	//! Recurses through the tree, going to the right-child-nodes until the max key is found.
@@ -354,7 +507,16 @@ private:
 	*/
 	TK* GetMax(Node<TK, TD>* ptrCurrent)
 	{
-		return nullptr; // temp
+		if (ptrCurrent->ptrRight == NULL)
+		{
+			return &ptrCurrent->key;
+		}
+		else
+		{
+			return GetMax(ptrCurrent->ptrRight);
+		}
+
+		//return nullptr;
 	}
 
 	/**
@@ -365,7 +527,34 @@ private:
 	*/
 	int GetHeight(Node<TK, TD>* ptrCurrent)
 	{
-		return -1; // temp
+		int left = 0;
+		if (ptrCurrent->ptrLeft != NULL)
+		{
+			left = GetHeight(ptrCurrent->ptrLeft)+1;
+		}
+		else
+		{
+			left = 1;
+		}
+
+		int right = 0;
+		if (ptrCurrent->ptrRight != NULL)
+		{
+			left = GetHeight(ptrCurrent->ptrRight)+1;
+		}
+		else
+		{
+			right = 1;
+		}
+
+		if (left >= right)
+		{
+			return left;
+		}
+		else
+		{
+			return right;
+		}
 	}
 
 private:
